@@ -1,0 +1,1 @@
+deb [signed-by=/usr/share/keyrings/nureva-iperf3-archive-keyring.gpg] https://nureva-com.github.io/iperf3-ppa ./
