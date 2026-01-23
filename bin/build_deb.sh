@@ -55,11 +55,11 @@ mkdir -p $PACKAGE_DIR/usr/bin
 
 # Add control text to bin package
 cat << EOF > $PACKAGE_DIR/DEBIAN/control 
-Package: iperf3_${IPERF3_SEMANTIC_VERSION}
+Package: iperf${IPERF3_SEMANTIC_VERSION}
 Version: ${IPERF3_SEMANTIC_VERSION}
 Section: universe/libs
 Priority: optional
-Source: iperf3_${IPERF3_SEMANTIC_VERSION}
+Source: iperf${IPERF3_SEMANTIC_VERSION}
 Architecture: $ARCH_SUFFIX
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
 Description: iperf3 ${IPERF3_SEMANTIC_VERSION} for Ubuntu Linux, made for Ubuntu 24.04
@@ -70,4 +70,4 @@ EOF
 cp -r $WRK_DIR/iperf3/src/iperf3 $PACKAGE_DIR/usr/bin
 
 # Build the packages
-dpkg-deb --root-owner-group --build $PACKAGE_DIR $WRK_DIR/iperf3_${IPERF3_SEMANTIC_VERSION}_${ARCH_SUFFIX}.deb
+dpkg-deb --root-owner-group --build $PACKAGE_DIR $WRK_DIR/iperf${IPERF3_SEMANTIC_VERSION}_${ARCH_SUFFIX}.deb
