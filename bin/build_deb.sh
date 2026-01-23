@@ -46,7 +46,7 @@ fi
 # Build iperf3 
 echo "Build iperf3..."
 (cd $WRK_DIR/iperf3 && ./bootstrap.sh)
-(cd $WRK_DIR/iperf3 && ./configure)
+(cd $WRK_DIR/iperf3 && ./configure --prefix=/usr/bin)
 (cd $WRK_DIR/iperf3 && make)
 
 # Build package directories
@@ -68,6 +68,7 @@ EOF
 
 # Copy all of the files into the package directories headers go into the package
 cp -r $WRK_DIR/iperf3/src/iperf3 $PACKAGE_DIR/usr/bin
+cp -r $WRK_DIR/iperf3/src/.libs $PACKAGE_DIR/usr/bin
 
 # Build the packages
 dpkg-deb --root-owner-group --build $PACKAGE_DIR $WRK_DIR/iperf${IPERF3_SEMANTIC_VERSION}_${ARCH_SUFFIX}.deb
