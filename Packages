@@ -1,13 +1,13 @@
 Package: iperf3.2
 Source: iperf3.2
 Version: 3.2
-Architecture: amd64
+Architecture: arm64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
-Filename: ./.wrk/iperf3_.deb
-Size: 3242
-MD5sum: ebb4032b273adbe7e4d130fd51c8f10b
-SHA1: 39c295f0609273b2e347fdf6b00336c4b138bf53
-SHA256: ddd3f7a208acb532a5f9ba6e8579b4abe7648d3c4b01b6d1d4b6ad0374d7688e
+Filename: ./iperf3.2_arm64.deb
+Size: 3220
+MD5sum: 995ec335f1e423dc8bb18030f9c2812d
+SHA1: 567a36530d0386841972a5ead0d90ad5ef2b2d6f
+SHA256: 7aa7192e3430860606867e5a993a4fe4443b078a41e61abedf8e9ffe6674fd08
 Section: universe/libs
 Priority: optional
 Homepage: https://github.com/esnet/iperf
@@ -18,26 +18,11 @@ Source: iperf3.2
 Version: 3.2
 Architecture: amd64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
-Filename: ./.wrk/iperf3.2_amd64.deb
-Size: 3242
-MD5sum: 7a61f4f7a45a086a85c561bd90e12535
-SHA1: c6b25a43bae747dbf283b8693509f313ae574b4b
-SHA256: b518b92a3206624dc3324379f3e714af4910565bc5ebd5073f2cbf3f2060bdf4
-Section: universe/libs
-Priority: optional
-Homepage: https://github.com/esnet/iperf
-Description: iperf3 3.2 for Ubuntu Linux, made for Ubuntu 24.04
-
-Package: iperf33.2-STABLE
-Source: iperf33.2-STABLE
-Version: 3.2-STABLE
-Architecture: amd64
-Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
-Filename: ./iperf3_3.2-STABLE_amd64.deb
-Size: 3254
-MD5sum: 6778a021225b44e09bf54454e0ee1698
-SHA1: b409cf9ca0c6e38e113b90e32e9a4fc30ebc51cb
-SHA256: 4e6e17e46058010ca4986833636f966873010d84ba224d29018b86ea4b32e927
+Filename: ./iperf3.2_amd64.deb
+Size: 525932
+MD5sum: 41d225046761fb1d82ae1e7c68772fdd
+SHA1: 665657595d15094111599dfd98dbcd96a2ba775c
+SHA256: e25c4fb377d3cf31653080d6c94a23da63368ab628f94ce7c4ee27cba0555090
 Section: universe/libs
 Priority: optional
 Homepage: https://github.com/esnet/iperf
