@@ -4,10 +4,10 @@ Version: 3.2
 Architecture: arm64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
 Filename: ./iperf3.2_arm64.deb
-Size: 542002
-MD5sum: 23e06886bb18a5f5dc398a6f917fec6d
-SHA1: 8f28f66c4aeba1fd0982b84747761f552ef1be17
-SHA256: 21eda49df771d64cac73c243f5966a44b11148553dfceeb39e998ac043dc2301
+Size: 255258
+MD5sum: 73f96ba5f24a1413e6867c0dd7dbeb3b
+SHA1: 3767a6241831fc2e5b56f21465846f860000b0c9
+SHA256: c37454e5bba9ba1cfa27ef4d9094b815eda79935d722ec9f4ccaf769c44d0763
 Section: universe/libs
 Priority: optional
 Homepage: https://github.com/esnet/iperf
@@ -19,10 +19,10 @@ Version: 3.2
 Architecture: amd64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
 Filename: ./iperf3.2_amd64.deb
-Size: 552560
-MD5sum: 1853f4e0aa20724dfb623c608195f7f9
-SHA1: 513b906d6b87a18f0fc56d82f25bd378ba17dc8b
-SHA256: cc3dc587b9019804119478ec756f30aba9bbe4596aaaa3bfd7ce978f651f5f2c
+Size: 417494
+MD5sum: 65d162aa3e703b083bb77cee769ab81c
+SHA1: b2061f001cafdef2cc66a5c98dc10ccf131d0eba
+SHA256: 153295012d95abe3e659858c034cac7c9d3ebe0e379b8f4a34a34aecbad83c48
 Section: universe/libs
 Priority: optional
 Homepage: https://github.com/esnet/iperf
