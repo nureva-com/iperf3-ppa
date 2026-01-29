@@ -33,7 +33,7 @@ mkdir -p $PACKAGE_DIR
 # We clone iperf3 repo
 if [[ ! -d $WRK_DIR/iperf3 ]]; then
     git clone \
-        --recursive https://github.com/esnet/iperf.git
+        --recursive https://github.com/esnet/iperf.git \
         $WRK_DIR/iperf3
 
     if [ $? -ne 0 ]; then
@@ -45,7 +45,7 @@ fi
 # Build iperf3 
 echo "Build iperf3..."
 (cd $WRK_DIR/iperf3 && ./bootstrap.sh)
-(cd $WRK_DIR/iperf3 && ./configure --prefix=/usr/bin)
+(cd $WRK_DIR/iperf3 && ./configure --enable-static --disable-shared --prefix=/usr/bin)
 (cd $WRK_DIR/iperf3 && make)
 
 # Build package directories
@@ -65,9 +65,8 @@ Description: iperf3 ${IPERF3_SEMANTIC_VERSION} for Ubuntu Linux, made for Ubuntu
 Homepage: https://github.com/esnet/iperf
 EOF
 
-# Copy all of the files into the package directories headers go into the package
+# Copy all of the files into the package directories
 cp -r $WRK_DIR/iperf3/src/iperf3 $PACKAGE_DIR/usr/bin
-cp -r $WRK_DIR/iperf3/src/.libs $PACKAGE_DIR/usr/bin
 
 # Build the packages and put it in the current working directory
 dpkg-deb --root-owner-group --build $PACKAGE_DIR iperf${IPERF3_SEMANTIC_VERSION}_${ARCH_SUFFIX}.deb
