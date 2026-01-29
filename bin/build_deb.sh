@@ -33,9 +33,7 @@ mkdir -p $PACKAGE_DIR
 # We clone iperf3 repo
 if [[ ! -d $WRK_DIR/iperf3 ]]; then
     git clone \
-        -j"$(nproc)" \
-        https://github.com/esnet/iperf.git \
-        -b "${IPERF3_GIT_VERSION}" \
+        --recursive https://github.com/esnet/iperf.git
         $WRK_DIR/iperf3
 
     if [ $? -ne 0 ]; then
