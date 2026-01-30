@@ -16,9 +16,14 @@ if  [ $INSTALL_COUNT -ne 6 ]; then
 fi
 
 if [ "$ARCH" == "aarch64" ]; then
+    export TARGET_DIR=aarch64-linux-gnu
     export ARCH_SUFFIX=arm64
 elif [ "$ARCH" == "x86_64" ]; then
+    export TARGET_DIR=x86_64-linux-gnu
     export ARCH_SUFFIX=amd64
+elif [ "$ARCH" == "armv7l" ]; then
+    export TARGET_DIR=arm-linux-gnueabihf
+    export ARCH_SUFFIX=armhf
 else 
     echo "Architecture $ARCH not supported here"
     exit 1
