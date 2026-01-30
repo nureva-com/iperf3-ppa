@@ -16,6 +16,21 @@ Description: iperf3 3.2 for Ubuntu Linux, made for Ubuntu 24.04
 Package: iperf3.2
 Source: iperf3.2
 Version: 3.2
+Architecture: armhf
+Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
+Filename: ./iperf3.2_armhf.deb
+Size: 256858
+MD5sum: 02c589acb37aea8a29afabc9b925ac90
+SHA1: ba0230048c9c3062c9dca0780d44024bb9e8291a
+SHA256: 2bd5f2304cf113701d2ef5289b3edb8d6ed18ab543c18ece389a847a018bcec4
+Section: universe/libs
+Priority: optional
+Homepage: https://github.com/esnet/iperf
+Description: iperf3 3.2 for Ubuntu Linux, made for Ubuntu 24.04
+
+Package: iperf3.2
+Source: iperf3.2
+Version: 3.2
 Architecture: amd64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
 Filename: ./iperf3.2_amd64.deb
