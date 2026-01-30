@@ -3,7 +3,7 @@
 ## This script is meant to setup ad debian package for iperf3 version 3.2 which at this time does not have it's
 ## own ppa. 
 
-IPERF3_GIT_VERSION=master
+IPERF3_GIT_VERSION=3.20
 IPERF3_SEMANTIC_VERSION=3.2
 
 ARCH=$(uname -m)
@@ -33,6 +33,7 @@ mkdir -p $PACKAGE_DIR
 # We clone iperf3 repo
 if [[ ! -d $WRK_DIR/iperf3 ]]; then
     git clone \
+        -b ${IPERF3_GIT_VERSION} \
         --recursive https://github.com/esnet/iperf.git \
         $WRK_DIR/iperf3
 
