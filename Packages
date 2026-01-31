@@ -4,10 +4,25 @@ Version: 3.2
 Architecture: arm64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
 Filename: ./iperf3.2_arm64.deb
-Size: 495614
-MD5sum: d2b0f2756877ea849f9a34d1daedfcf0
-SHA1: 2b8a198c0f1800d1b62860f852e1a8388c31fbf7
-SHA256: adf65572af0b4bc93820c7eb7140a7695e3679593d050e0801cd050626bccb56
+Size: 255248
+MD5sum: 734d7fa1a40111831718cc31b718846f
+SHA1: f5ae235cf2711927d725f3295eb17dd24fe5c250
+SHA256: c744ff08341e60675d3c2877bcf227e4a06a5ec7f33bc2960d885ed4680eff89
+Section: universe/libs
+Priority: optional
+Homepage: https://github.com/esnet/iperf
+Description: iperf3 3.2 for Ubuntu Linux, made for Ubuntu 24.04
+
+Package: iperf3.2
+Source: iperf3.2
+Version: 3.2
+Architecture: armhf
+Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
+Filename: ./iperf3.2_armhf.deb
+Size: 256858
+MD5sum: 02c589acb37aea8a29afabc9b925ac90
+SHA1: ba0230048c9c3062c9dca0780d44024bb9e8291a
+SHA256: 2bd5f2304cf113701d2ef5289b3edb8d6ed18ab543c18ece389a847a018bcec4
 Section: universe/libs
 Priority: optional
 Homepage: https://github.com/esnet/iperf
@@ -19,10 +34,10 @@ Version: 3.2
 Architecture: amd64
 Maintainer: Kevin Lutzer <kevinlutzer@nureva.com>
 Filename: ./iperf3.2_amd64.deb
-Size: 525932
-MD5sum: 41d225046761fb1d82ae1e7c68772fdd
-SHA1: 665657595d15094111599dfd98dbcd96a2ba775c
-SHA256: e25c4fb377d3cf31653080d6c94a23da63368ab628f94ce7c4ee27cba0555090
+Size: 258460
+MD5sum: 324611ea1d7423032d9a7b90423cb691
+SHA1: 74e45baae92db0f325a195186328178886878c3c
+SHA256: 934ccd3c73758f5cd1d6e28486a2e103e78e8872b33d32a9fc3b3773d1e5f2b3
 Section: universe/libs
 Priority: optional
 Homepage: https://github.com/esnet/iperf

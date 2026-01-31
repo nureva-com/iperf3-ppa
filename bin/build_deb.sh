@@ -3,7 +3,7 @@
 ## This script is meant to setup ad debian package for iperf3 version 3.2 which at this time does not have it's
 ## own ppa. 
 
-IPERF3_GIT_VERSION=3.2-STABLE
+IPERF3_GIT_VERSION=3.20
 IPERF3_SEMANTIC_VERSION=3.2
 
 ARCH=$(uname -m)
@@ -16,9 +16,14 @@ if  [ $INSTALL_COUNT -ne 6 ]; then
 fi
 
 if [ "$ARCH" == "aarch64" ]; then
+    export TARGET_DIR=aarch64-linux-gnu
     export ARCH_SUFFIX=arm64
 elif [ "$ARCH" == "x86_64" ]; then
+    export TARGET_DIR=x86_64-linux-gnu
     export ARCH_SUFFIX=amd64
+elif [ "$ARCH" == "armv7l" ]; then
+    export TARGET_DIR=arm-linux-gnueabihf
+    export ARCH_SUFFIX=armhf
 else 
     echo "Architecture $ARCH not supported here"
     exit 1
@@ -33,8 +38,8 @@ mkdir -p $PACKAGE_DIR
 # We clone iperf3 repo
 if [[ ! -d $WRK_DIR/iperf3 ]]; then
     git clone \
+        -b ${IPERF3_GIT_VERSION} \
         --recursive https://github.com/esnet/iperf.git \
-        -b "${IPERF3_GIT_VERSION}" \
         $WRK_DIR/iperf3
 
     if [ $? -ne 0 ]; then
@@ -46,7 +51,7 @@ fi
 # Build iperf3 
 echo "Build iperf3..."
 (cd $WRK_DIR/iperf3 && ./bootstrap.sh)
-(cd $WRK_DIR/iperf3 && ./configure --prefix=/usr/bin)
+(cd $WRK_DIR/iperf3 && ./configure --enable-static --disable-shared --prefix=/usr/bin)
 (cd $WRK_DIR/iperf3 && make)
 
 # Build package directories
@@ -66,9 +71,8 @@ Description: iperf3 ${IPERF3_SEMANTIC_VERSION} for Ubuntu Linux, made for Ubuntu
 Homepage: https://github.com/esnet/iperf
 EOF
 
-# Copy all of the files into the package directories headers go into the package
+# Copy all of the files into the package directories
 cp -r $WRK_DIR/iperf3/src/iperf3 $PACKAGE_DIR/usr/bin
-cp -r $WRK_DIR/iperf3/src/.libs $PACKAGE_DIR/usr/bin
 
-# Build the packages
-dpkg-deb --root-owner-group --build $PACKAGE_DIR $WRK_DIR/iperf${IPERF3_SEMANTIC_VERSION}_${ARCH_SUFFIX}.deb
+# Build the packages and put it in the current working directory
+dpkg-deb --root-owner-group --build $PACKAGE_DIR iperf${IPERF3_SEMANTIC_VERSION}_${ARCH_SUFFIX}.deb
